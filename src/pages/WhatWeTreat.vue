@@ -1,17 +1,14 @@
 <template>
   <Layout>
-    <h1>Homepage</h1>
+    <h1>What We Treat</h1>
   </Layout>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "what-we-treat",
   metaInfo: {
-    title: "home"
+    title: "What We Treat"
   }
 };
 </script>
-
-<style lang="scss">
-</style>

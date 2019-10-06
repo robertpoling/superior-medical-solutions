@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <h1>Homepage</h1>
+    <h1>How We Compare</h1>
   </Layout>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "how-we-compare",
   metaInfo: {
-    title: "home"
+    title: "How We Compare"
   }
 };
 </script>

@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <h1>Homepage</h1>
+    <h1>We Can Help</h1>
   </Layout>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "we-can-help",
   metaInfo: {
-    title: "home"
+    title: "We Can Help"
   }
 };
 </script>

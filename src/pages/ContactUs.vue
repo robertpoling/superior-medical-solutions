@@ -1,14 +1,14 @@
 <template>
   <Layout>
-    <h1>Homepage</h1>
+    <h1>Contact Us</h1>
   </Layout>
 </template>
 
 <script>
 export default {
-  name: "home",
+  name: "contact-us",
   metaInfo: {
-    title: "home"
+    title: "Contact Us"
   }
 };
 </script>
