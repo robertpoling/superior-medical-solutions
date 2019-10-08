@@ -4,6 +4,7 @@
     <div class="container">
       <slot />
     </div>
+    <GlobalContact />
     <GlobalFooter />
   </v-app>
 </template>
@@ -18,12 +19,14 @@ query {
 
 <script>
 import GlobalNav from "@/components/global/GlobalNav";
+import GlobalContact from "@/components/global/GlobalContact";
 import GlobalFooter from "@/components/global/GlobalFooter";
 
 export default {
   name: "layout-default",
   components: {
     GlobalNav,
+    GlobalContact,
     GlobalFooter
   }
 };
@@ -37,7 +40,10 @@ body {
   padding: 0;
   line-height: 1.5;
 }
+.v-application.layout {
+  background: #eee;
+}
 .container {
-  border: 1px solid red;
+  background: white;
 }
 </style>

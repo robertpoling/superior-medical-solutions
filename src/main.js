@@ -3,8 +3,9 @@
 
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
-import '@/assets/scss/index.scss';
 import DefaultLayout from '~/layouts/Default.vue';
+
+import '@/assets/scss/_index.scss';
 
 export default function(Vue, { appOptions, head }) {
   head.link.push({
@@ -12,9 +13,13 @@ export default function(Vue, { appOptions, head }) {
     href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
   });
 
-  const opts = {}; //opts includes, vuetify themes, icons, etc.
-  Vue.use(Vuetify);
+  const opts = {
+    icons: {
+      iconfont: 'mdiSvg',
+    },
+  }; //opts includes, vuetify themes, icons, etc.
 
+  Vue.use(Vuetify);
   appOptions.vuetify = new Vuetify(opts);
 
   // Set default layout as a global component

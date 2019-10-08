@@ -1,7 +1,7 @@
 <template>
-  <v-footer dark padless>
+  <v-footer dark class="container">
     <v-card flat>
-      <v-card-text class="py-2 white--text text-center">
+      <v-card-text class="white--text text-center">
         <strong>Superior Medical Solutions</strong>
         - © {{ new Date().getFullYear() }}
       </v-card-text>
