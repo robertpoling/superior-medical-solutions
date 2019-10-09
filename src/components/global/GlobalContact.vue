@@ -3,7 +3,7 @@
     <div class="container">
       <h3>Enjoy Sex Again!</h3>
       <h4>Contact Us Today! What Are You Waiting For?</h4>
-      <v-form ref="form" v-model="valid" lazy-validation>
+      <v-form ref="form" v-model="valid">
         <v-row>
           <v-col cols="12" md="3">
             <v-text-field
@@ -11,7 +11,6 @@
               :rules="nameRules"
               label="Name"
               type="text"
-              class="material-icons"
               clearable
               required
               outlined
@@ -25,7 +24,6 @@
               label="Phone"
               type="tel"
               v-mask="'(###)-###-####'"
-              masked="false"
               clearable
               required
               outlined
@@ -48,7 +46,7 @@
             <v-menu v-model="datePicker" :close-on-content-click="false">
               <template v-slot:activator="{ on }">
                 <v-text-field
-                  :value="dateFormatted"
+                  v-model="dateDisplayed"
                   :rules="dateRules"
                   label="Preferred Date"
                   v-on="on"
@@ -57,13 +55,22 @@
                   required
                 ></v-text-field>
               </template>
-              <v-date-picker v-model="date" @change="datePicker = false"></v-date-picker>
+              <v-date-picker v-model="date" color="primary" @change="datePicker = false"></v-date-picker>
             </v-menu>
           </v-col>
         </v-row>
 
         <v-row justify="end">
-          <v-btn class="mr-3" dark>Submit</v-btn>
+          <v-btn
+          dark
+        :disabled="!valid"
+        color="success"
+        class="mr-4"
+        @click="submitForm"
+      >
+        Submit
+      </v-btn>
+          
         </v-row>
       </v-form>
     </div>
@@ -73,6 +80,7 @@
 <script>
 import { mask } from "vue-the-mask";
 import moment from "moment";
+import axios from "axios";
 
 export default {
   name: "global-contact",
@@ -80,7 +88,6 @@ export default {
   data() {
     return {
       valid: true,
-
       name: "",
       nameRules: [
         v => !!v || "Name is required",
@@ -99,15 +106,57 @@ export default {
       date: "",
       datePicker: false,
       dateRules: [
-        v => (v && v.length >= 15) || "Please select date from calendar"
-      ]
+        v => (v && v.length >= 10) || "Please select date from calendar"
+      ],
     };
   },
-  methods: {},
-  computed: {
-    dateFormatted() {
-      return this.date ? moment(this.date).format("dddd, MMMM Do") : "";
+  methods: {
+    validate() {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
+    },
+    submitForm() {
+      return axios({
+        method: "post",
+        url: "https://api.airtable.com/v0/" + process.env.GRIDSOME_AT_BASE,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + process.env.GRIDSOME_AT_KEY
+        },
+        data: {
+          fields: {
+            "Name": this.name,
+            "Phone": this.phone,
+            "Email": this.email,
+            "Preferred Date": this.dateSubmitted
+          },
+        }
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log("SUBMIT ERROR: " + error);
+      })
     }
+  },
+  computed: {
+    dateDisplayed: {
+      get: function() {
+      return this.date ? moment(this.date).format("dddd, MMMM Do") : "";
+      },
+       set: function() {
+        return ""; 
+      }
+    },
+    dateSubmitted() {
+      return moment(this.date).format("MMMM D, YYYY").toString();
+    }
+  },
+  mounted() {
+    console.log("LOOK!: " + this.dateDisplayed);
+    
   }
 };
 </script>

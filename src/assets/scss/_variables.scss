@@ -1,0 +1,33 @@
+// SASS Variables
+// They don't dynamically change, just global variables to reference
+
+//
+// MEDIA QUERIES
+//
+$lg: 1264px;
+$md: 960px;
+$sm: 600px;
+$xs: 480px;
+
+$container: 1185px;
+
+// CSS Variables
+// They dyamically change based on user
+
+:root {
+  --base-font-size: 16px;
+  --width: 768px;
+  --spacing: 2rem;
+  --radius: 30px;
+}
+
+// Light default theme
+body {
+  --bg-color: hsl(0, 0%, 93%);
+  --bg-side: hsl(0, 10%, 91%);
+  --text-color: hsl(0, 0%, 14%);
+  // specific colors
+  --blue: hsl(212, 43%, 33%);
+  --white: hsl(0, 0%, 96%);
+  --black: hsl(0, 0%, 14%);
+}

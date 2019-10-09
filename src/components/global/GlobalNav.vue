@@ -1,23 +1,21 @@
 <template>
-  <header class="header">
-    <nav>
-      <v-toolbar dense height="120">
-        <v-toolbar-title>
-          <g-image
-            class="nav__image"
-            src="@/assets/images/logo.jpg"
-            fit="inside"
-            background="white"
-          />
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items v-for="item in navMain" :key="item.text">
-          <v-btn text class="nav__link" :to="item.route">{{ item.text }}</v-btn>
-        </v-toolbar-items>
-        <!-- <GlobalNavMore /> -->
-      </v-toolbar>
-    </nav>
-  </header>
+  <div class="container">
+    <v-toolbar dense flat height="120" class="container">
+      <v-spacer></v-spacer>
+      <v-toolbar-title>
+        <g-image class="nav__image" src="@/assets/images/logo.jpg" fit="inside" background="white" />
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+
+    <v-app-bar flat>
+      <v-spacer></v-spacer>
+      <v-toolbar-items v-for="item in navMain" :key="item.text">
+        <v-btn text class="nav__link mx-1" :to="item.route">{{ item.text }}</v-btn>
+      </v-toolbar-items>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>

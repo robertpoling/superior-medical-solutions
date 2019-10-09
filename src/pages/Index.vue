@@ -1,26 +1,32 @@
 <template>
   <Layout>
-    <h1>Superior Medical Solutions improves your sexual health. At Superior Medical Solutions, a trusted local business, we offer our patients a personalized treatment plan, confidentiality, and a 100% IRON-CLAD GUARANTEE! SUCCESS ON YOUR FIRST VISIT OR IT IS FREE!</h1>
+    <div class="home--intro">
+      <p>
+        Superior Medical Solutions improves your sexual health. At Superior Medical Solutions, a trusted local business, we offer our patients a personalized treatment plan, confidentiality, and a
+        <span
+          class="uppercase red--text text--lighten-1"
+        >100% iron-clad guarantee!</span>
+      </p>
+      <p class="uppercase text-center py-4">Success on your first visit or it is free!</p>
+    </div>
     <g-image src="@/assets/images/home/wife-hugging-husband.jpg" />
-    <h2>About Us</h2>
-    <h2>Understand</h2>
-    <h2>FAQs</h2>
-    <h2>Specials</h2>
+    <v-row class="home--cta-buttons">
+      <v-col v-for="item in ctaButtons" :key="item.text">
+        <a :href="item.route">
+          <h2 class="bg-blue text-center">{{ item.text }}</h2>
+        </a>
+      </v-col>
+    </v-row>
 
-    <hr />
-
-    <h3>Relaxed Environment</h3>
-    <p>We make a casual atmosphere a priority. We know that this can be an uncomfortable topic for many to pursue, we're here to help you relax!</p>
-
-    <h3>Privacy Protection</h3>
-    <p>We pride ourselves on our patient service. From our individual waiting rooms to our Colorado licensed physicians, you will be treated privately and professionally.</p>
-
-    <h3>Effective Treatments</h3>
-    <p>We offer a 100% guarantee to our patients. We promise success on your first visit or it's FREE! We believe in our treatments, and you should too!</p>
-
-    <h3>Dedicated to YOU</h3>
-    <p>Our doctors work with you to determine which treatment or combination of treatments will work best for you. All of our treatments are personalized to you!</p>
-
+    <v-row class="home--cta-blocks">
+      <v-col v-for="item in ctaBlocks" :key="item.text">
+        <v-card>
+          <v-icon>{{ item.icon }}</v-icon>
+          <v-card-title>{{ item.title }}</v-card-title>
+          <v-card-text>{{ item.text }}</v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
     <hr />
     <h1>Specializing in Erectile Treatments</h1>
     <g-image src="@/assets/images/home/golfer-hitting-golf.jpg" />
@@ -38,9 +44,56 @@ export default {
   name: "home",
   metaInfo: {
     title: "home"
+  },
+  data() {
+    return {
+      ctaButtons: [
+        { text: "About Us", route: "/" },
+        { text: "Understand", route: "/" },
+        { text: "FAQs", route: "/" },
+        { text: "Specials", route: "/" }
+      ],
+      ctaBlocks: [
+        {
+          icon: "local_cafe",
+          title: "Relaxed Environment",
+          text:
+            "We make a casual atmosphere a priority. We know that this can be an uncomfortable topic for many to pursue, we're here to help you relax!"
+        },
+        {
+          icon: "lock",
+          title: "Privacy Protection",
+          text:
+            "We pride ourselves on our patient service. From our individual waiting rooms to our Colorado licensed physicians, you will be treated privately and professionally."
+        },
+        {
+          icon: "done_outline",
+          title: "Effective Treatments",
+          text:
+            "We offer a 100% guarantee to our patients. We promise success on your first visit or it's FREE! We believe in our treatments, and you should too!"
+        },
+        {
+          icon: "person",
+          title: "Dedicated to YOU",
+          text:
+            "Our doctors work with you to determine which treatment or combination of treatments will work best for you. All of our treatments are personalized to you!"
+        }
+      ]
+    };
   }
 };
 </script>
 
 <style lang="scss">
+.home {
+  &--intro {
+    font-size: 1.396rem;
+    font-weight: bold;
+  }
+  &--cta-buttons {
+    button {
+      background: blue;
+    }
+  }
+}
 </style>

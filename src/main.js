@@ -5,13 +5,14 @@ import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css';
 import DefaultLayout from '~/layouts/Default.vue';
 
-import '@/assets/scss/_index.scss';
+import '@/assets/scss/index.scss';
 
 export default function(Vue, { appOptions, head }) {
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-  });
+  // Not working so I just added it to @/assets/scss/_typography.scss and it works just fine
+  // head.link.push({
+  //   rel: 'stylesheet',
+  //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+  // });
 
   const opts = {
     icons: {
@@ -19,7 +20,11 @@ export default function(Vue, { appOptions, head }) {
     },
   }; //opts includes, vuetify themes, icons, etc.
 
-  Vue.use(Vuetify);
+  Vue.use(Vuetify, {
+    theme: {
+      primary: '#FFA726',
+    },
+  });
   appOptions.vuetify = new Vuetify(opts);
 
   // Set default layout as a global component

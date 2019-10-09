@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Enriqueta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Material+Icons');
+
+html {
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--blue);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: 'Enriqueta', serif;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
