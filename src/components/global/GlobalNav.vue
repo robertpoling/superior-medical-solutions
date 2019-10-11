@@ -6,19 +6,19 @@
         <img class="nav__image" src="@/assets/images/logo.jpg" background="white" />
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-app-bar-nav-icon class="nav-mobile mb-6" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon large="true" class="nav-mobile mb-6" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary>
+    <v-navigation-drawer v-model="drawer" absolute temporary width="75%">
       <v-list-item>
         <v-list-item-content>
-          <g-image class="nav-drawer--image" src="@/assets/images/logo.jpg" background="white" />
+          <img class="nav-drawer--image" src="@/assets/images/logo.jpg" background="white" />
         </v-list-item-content>
       </v-list-item>
 
       <v-divider></v-divider>
 
-      <v-list dense>
+      <v-list>
         <v-list-item v-for="item in navMain" :key="item.text" :to="item.route">
           <v-list-item-content class="nav-drawer--items">
             <v-list-item-title>{{ item.text }}</v-list-item-title>
@@ -76,16 +76,20 @@ export default {
     text-transform: uppercase;
   }
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 1264px) {
   .nav-desktop {
     // bigger than 900px
     display: none !important;
   }
 }
-@media only screen and (min-width: 961px) {
+@media only screen and (min-width: 1265px) {
   button.nav-mobile {
     // smaller than 900px
     display: none !important;
   }
+}
+.v-navigation-drawer__content .v-list-item__title {
+  font-size: 2rem !important;
+  line-height: 3.5rem !important;
 }
 </style>

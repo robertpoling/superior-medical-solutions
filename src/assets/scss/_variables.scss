@@ -16,6 +16,9 @@ $container: 1185px;
 
 :root {
   --base-font-size: 20px;
+  @media only screen and (max-width: 1264px) {
+    --base-font-size: 26px;
+  }
   --width: 768px;
   --spacing: 2rem;
   --radius: 30px;

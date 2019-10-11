@@ -11,7 +11,7 @@
     </div>
     <img src="@/assets/images/home/wife-hugging-husband.jpg" />
     <v-row class="home--cta-buttons">
-      <v-col cols="12" sm="6" md="3" v-for="item in ctaButtons" :key="item.text">
+      <v-col cols="12" md="6" sm="12" v-for="item in ctaButtons" :key="item.text">
         <a :href="item.route" @click="$vuetify.goTo(item.route)">
           <h2 class="bg-blue text-center pa-5">{{ item.text }}</h2>
         </a>

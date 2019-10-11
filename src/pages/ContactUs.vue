@@ -5,7 +5,7 @@
     </Parallax>
 
     <v-row>
-      <v-col cols="12" md="3">
+      <v-col cols="12" lg="3">
         <p>
           <span class="bold">Superior Medical Solutions</span>
           <br />5730 Ward Road Suite #201
@@ -21,7 +21,7 @@
           <a href="mailto:admin@smscolorado.com">admin@smscolorado.com</a>
         </p>
       </v-col>
-      <v-col cols="12" md="6">
+      <v-col cols="12" lg="6">
         <v-responsive :aspect-ratio="16/9" class="contact--map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.292110343533!2d-105.13962668455147!3d39.800438979441545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8f578bf68377%3A0x9a49a8ebcb72df62!2sSuperior%20Medical%20Solutions!5e0!3m2!1sen!2sus!4v1570750128062!5m2!1sen!2sus"
@@ -34,7 +34,7 @@
         </v-responsive>
       </v-col>
 
-      <v-col cols="12" md="3">
+      <v-col cols="12" lg="3">
         <p>
           <span class="bold">Office Hours:</span>
           <br />9:00am - 5:00pm

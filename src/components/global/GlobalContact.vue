@@ -7,7 +7,7 @@
       </div>
       <v-form ref="form" v-model="valid">
         <v-row>
-          <v-col cols="12" md="3">
+          <v-col cols="12" lg="3">
             <v-text-field
               v-model="name"
               :rules="nameRules"
@@ -19,7 +19,7 @@
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="3">
+          <v-col cols="12" lg="3">
             <v-text-field
               v-model="phone"
               :rules="phoneRules"
@@ -32,7 +32,7 @@
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="3">
+          <v-col cols="12" lg="3">
             <v-text-field
               v-model="email"
               :rules="emailRules"
@@ -44,7 +44,7 @@
             ></v-text-field>
           </v-col>
 
-          <v-col cols="12" md="3">
+          <v-col cols="12" lg="3">
             <v-menu v-model="datePicker" :close-on-content-click="false">
               <template v-slot:activator="{ on }">
                 <v-text-field
