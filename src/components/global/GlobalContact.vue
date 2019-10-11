@@ -1,8 +1,10 @@
 <template>
   <div class="contact-form">
     <div class="container">
-      <h3>Enjoy Sex Again!</h3>
-      <h4>Contact Us Today! What Are You Waiting For?</h4>
+      <div class="contact-form--title">
+        <h3>Enjoy Sex Again!</h3>
+        <h4>Contact Us Today! What Are You Waiting For?</h4>
+      </div>
       <v-form ref="form" v-model="valid">
         <v-row>
           <v-col cols="12" md="3">
@@ -55,22 +57,22 @@
                   required
                 ></v-text-field>
               </template>
-              <v-date-picker v-model="date" color="primary" @change="datePicker = false"></v-date-picker>
+              <v-date-picker v-model="date" class="blue darken-4" @change="datePicker = false"></v-date-picker>
             </v-menu>
           </v-col>
         </v-row>
 
         <v-row justify="end">
-          <v-btn
-          dark
-        :disabled="!valid"
-        color="success"
-        class="mr-4"
-        @click="submitForm"
-      >
-        Submit
-      </v-btn>
-          
+          <v-col v-if="success" class="green darken-2 white--text">
+            <p class="pa-3 ma-0 text-center">Thank you. Your information has been submitted</p>
+          </v-col>
+
+          <v-btn dark :disabled="!valid" class="mr-4" @click="submitForm">Submit</v-btn>
+
+          <v-snackbar v-model="snackbar">
+            Thank you. Your information has been submitted
+            <v-btn class="green darken-2 white--text" @click="snackbar = false">Close</v-btn>
+          </v-snackbar>
         </v-row>
       </v-form>
     </div>
@@ -108,12 +110,14 @@ export default {
       dateRules: [
         v => (v && v.length >= 10) || "Please select date from calendar"
       ],
+      snackbar: false,
+      success: false
     };
   },
   methods: {
     validate() {
       if (this.$refs.form.validate()) {
-        this.snackbar = true
+        this.snackbar = true;
       }
     },
     submitForm() {
@@ -126,42 +130,68 @@ export default {
         },
         data: {
           fields: {
-            "Name": this.name,
-            "Phone": this.phone,
-            "Email": this.email,
+            Name: this.name,
+            Phone: this.phone,
+            Email: this.email,
             "Preferred Date": this.dateSubmitted
-          },
+          }
         }
       })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log("SUBMIT ERROR: " + error);
-      })
+        .then(response => {
+          console.log(response);
+          if (this.$refs.form.validate()) {
+            this.snackbar = true;
+            this.success = true;
+            this.$refs.form.reset();
+          }
+        })
+        .catch(error => {
+          console.log("SUBMIT ERROR: " + error);
+        });
     }
   },
   computed: {
     dateDisplayed: {
       get: function() {
-      return this.date ? moment(this.date).format("dddd, MMMM Do") : "";
+        return this.date ? moment(this.date).format("dddd, MMMM Do") : "";
       },
-       set: function() {
-        return ""; 
+      set: function() {
+        return "";
       }
     },
     dateSubmitted() {
-      return moment(this.date).format("MMMM D, YYYY").toString();
+      return moment(this.date)
+        .format("MMMM D, YYYY")
+        .toString();
     }
   },
   mounted() {
     console.log("LOOK!: " + this.dateDisplayed);
-    
   }
 };
 </script>
 
 <style lang="scss">
 .contact-form {
+  .container {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background: white;
+    padding: 2rem 2rem;
+  }
+  &--title {
+    text-align: center;
+    h3 {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    h4 {
+      padding-bottom: 1rem;
+    }
+  }
+  .v-messages__message {
+    font-weight: bold;
+    color: #d32f2f;
+  }
 }
 </style>

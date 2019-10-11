@@ -1,11 +1,18 @@
-img {
+img,
+.section-white {
+  background: white;
   border-radius: 2px;
   box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
     0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+.section-white {
+  margin: 16px 0;
+  padding: 16px;
+}
+
 .v-application.layout {
-  background: var(--bg-side);
+  background: var(--white);
 }
 .container {
   background: var(--white);
@@ -14,4 +21,36 @@ img {
 .bg-blue {
   background: var(--blue);
   color: var(--white);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+ul.list {
+  li::before {
+    content: '- ';
+  }
+}
+
+span.line-break {
+  display: inline-block;
+}
+
+.margin-center {
+  margin: 0 auto;
+}
+
+p,
+blockquote {
+  a {
+    color: var(--blue);
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid var(--blue);
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
 }
