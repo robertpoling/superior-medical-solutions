@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Parallax pText="How Do We Compare?">
-      <g-image src="@/assets/images/how-we-compare/healthy-couple.jpg" />
+      <img src="@/assets/images/how-we-compare/healthy-couple.jpg" />
     </Parallax>
 
     <p
@@ -100,6 +100,10 @@ export default {
     img {
       padding: 1rem;
       box-shadow: none;
+      @media only screen and (max-width: 801px) {
+        padding: 0;
+        transform: scale(1.5);
+      }
     }
   }
   td {
@@ -111,8 +115,9 @@ export default {
     &.no {
       border: none !important;
       transform: scale(1.5) translate(-15px, 16px);
-    }
-    &.yes {
+      @media only screen and (max-width: 801px) {
+        transform: none;
+      }
     }
   }
 }

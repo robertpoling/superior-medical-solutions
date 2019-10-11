@@ -63,16 +63,16 @@
         </v-row>
 
         <v-row justify="end">
-          <v-col v-if="success" class="green darken-2 white--text">
+          <v-col v-if="success" class="green darken-2 white--text success_message">
             <p class="pa-3 ma-0 text-center">Thank you. Your information has been submitted</p>
           </v-col>
 
           <v-btn dark :disabled="!valid" class="mr-4" @click="submitForm">Submit</v-btn>
 
-          <v-snackbar v-model="snackbar">
+          <!-- <v-snackbar v-model="snackbar">
             Thank you. Your information has been submitted
             <v-btn class="green darken-2 white--text" @click="snackbar = false">Close</v-btn>
-          </v-snackbar>
+          </v-snackbar>-->
         </v-row>
       </v-form>
     </div>
@@ -164,9 +164,6 @@ export default {
         .format("MMMM D, YYYY")
         .toString();
     }
-  },
-  mounted() {
-    console.log("LOOK!: " + this.dateDisplayed);
   }
 };
 </script>
@@ -192,6 +189,11 @@ export default {
   .v-messages__message {
     font-weight: bold;
     color: #d32f2f;
+  }
+  .success_message {
+    border-radius: 2px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
   }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Parallax pText="Romance & Intimacy">
-      <g-image src="@/assets/images/we-can-help/womens-underwear-on-bed.jpg" />
+      <img src="@/assets/images/we-can-help/womens-underwear-on-bed.jpg" />
     </Parallax>
 
     <h2>Reclaim Your Sexual Health and Strengthen Your Relationship</h2>

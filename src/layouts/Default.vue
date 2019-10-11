@@ -1,9 +1,11 @@
 <template>
   <v-app class="layout">
     <GlobalNav />
-    <div class="container">
-      <slot />
-    </div>
+    <transition name="fade" appear>
+      <main class="container">
+        <slot />
+      </main>
+    </transition>
     <GlobalContact />
     <GlobalFooter />
   </v-app>
@@ -33,4 +35,11 @@ export default {
 </script>
 
 <style>
+.fade-enter-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
 </style>

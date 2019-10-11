@@ -2,7 +2,7 @@
   <Layout>
     <section>
       <Parallax pText="Understanding ED & PE">
-        <g-image id="understanding" src="@/assets/images/what-we-treat/couples-feet-in-bed.jpg" />
+        <img id="understanding" src="@/assets/images/what-we-treat/couples-feet-in-bed.jpg" />
       </Parallax>
 
       <h2>What is Erectile Dysfunction (ED)?</h2>

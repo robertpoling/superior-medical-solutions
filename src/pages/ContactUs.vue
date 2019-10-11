@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <Parallax pText="Contact Us">
-      <g-image id="contact" src="../assets/images/contact-us/man-fishing.jpg" />
+      <img id="contact" src="../assets/images/contact-us/man-fishing.jpg" />
     </Parallax>
 
     <v-row>

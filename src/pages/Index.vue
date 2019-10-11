@@ -9,7 +9,7 @@
       </p>
       <p class="uppercase text-center py-4">Success on your first visit or it is free!</p>
     </div>
-    <g-image src="@/assets/images/home/wife-hugging-husband.jpg" />
+    <img src="@/assets/images/home/wife-hugging-husband.jpg" />
     <v-row class="home--cta-buttons">
       <v-col cols="12" sm="6" md="3" v-for="item in ctaButtons" :key="item.text">
         <a :href="item.route" @click="$vuetify.goTo(item.route)">
@@ -33,9 +33,7 @@
     <v-row>
       <v-col>
         <p>Superior Medical Solutions specializes in non-surgical treatments for erectile dysfunction. Getting an erection, keeping an erection, and premature ejaculation are some of the most common issues we see in our office. We use a variety of FDA approved medications tailored to suit your individual needs.</p>
-
         <p>We have a reputation for successfully treating those who have had no success with other methods. Our treatments are able to help those with medical conditions such as heart disease, diabetes, high blood pressure, prostate cancer, and many others.</p>
-
         <p>Choosing a healthcare provider is one of the most important decisions you can make. You want someone who is caring, informed, and accessible. Someone willing to take the time to go over all of your options and treat you as a person, not just a patient.</p>
       </v-col>
     </v-row>
@@ -102,6 +100,9 @@ export default {
       transition: opacity 0.2s;
       &:hover {
         opacity: 0.5;
+      }
+      a {
+        text-decoration: none;
       }
       h2 {
         cursor: pointer;
