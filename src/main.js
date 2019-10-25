@@ -8,12 +8,6 @@ import DefaultLayout from '~/layouts/Default.vue';
 import '@/assets/scss/index.scss';
 
 export default function(Vue, { appOptions, head }) {
-  // Not working so I just added it to @/assets/scss/_typography.scss and it works just fine
-  // head.link.push({
-  //   rel: 'stylesheet',
-  //   href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
-  // });
-
   const opts = {
     icons: {
       iconfont: 'mdiSvg',

@@ -45,7 +45,7 @@ import Parallax from "@/components/Parallax";
 export default {
   name: "home",
   metaInfo: {
-    title: "home"
+    title: "Superior Medical Solutions"
   },
   components: {
     Parallax

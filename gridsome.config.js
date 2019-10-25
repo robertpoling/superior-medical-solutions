@@ -6,6 +6,6 @@
 
 module.exports = {
   siteName: 'Superior Medical Solutions',
-  siteUrl: 'https://superior-medical-solutions.netlify.com',
+  siteUrl: 'https://smscolorado.com',
   plugins: [],
 };

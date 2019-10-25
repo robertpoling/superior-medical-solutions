@@ -9,7 +9,7 @@
       <v-app-bar-nav-icon large="true" class="nav-mobile mb-6" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" absolute temporary width="75%">
+    <v-navigation-drawer v-model="drawer" absolute temporary class="nav-drawer">
       <v-list-item>
         <v-list-item-content>
           <img class="nav-drawer--image" src="@/assets/images/logo.jpg" background="white" />
@@ -89,7 +89,7 @@ export default {
   }
 }
 .v-navigation-drawer__content .v-list-item__title {
-  font-size: 2rem !important;
-  line-height: 3.5rem !important;
+  /* font-size: 2rem !important; */
+  /* line-height: 3.5rem !important; */
 }
 </style>
