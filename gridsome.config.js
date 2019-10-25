@@ -7,14 +7,5 @@
 module.exports = {
   siteName: 'Superior Medical Solutions',
   siteUrl: 'https://superior-medical-solutions.netlify.com',
-  plugins: [
-    {
-      use: '@gridsome/plugin-sitemap',
-      options: {
-        cacheTime: 600000, // default
-        // exclude: ['/exclude-me'],
-        config: {},
-      },
-    },
-  ],
+  plugins: [],
 };
