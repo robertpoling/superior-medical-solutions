@@ -56,7 +56,7 @@ export default {
         { text: "About Us", route: "#about-us" },
         { text: "Understand", route: "/what-we-treat/#understanding" },
         { text: "FAQs", route: "/we-can-help/#faqs" },
-        { text: "Specials", route: "/contact-us/#contact" }
+        { text: "Contact", route: "/contact-us/#contact" }
       ],
       ctaBlocks: [
         {

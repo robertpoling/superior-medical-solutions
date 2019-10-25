@@ -6,5 +6,14 @@
 
 module.exports = {
   siteName: 'Superior Medical Solutions',
-  plugins: [],
+  plugins: [
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000, // default
+        // exclude: ['/exclude-me'],
+        config: {},
+      },
+    },
+  ],
 };
