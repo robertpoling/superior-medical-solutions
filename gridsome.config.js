@@ -6,6 +6,7 @@
 
 module.exports = {
   siteName: 'Superior Medical Solutions',
+  siteUrl: 'https://superior-medical-solutions.netlify.com',
   plugins: [
     {
       use: '@gridsome/plugin-sitemap',
