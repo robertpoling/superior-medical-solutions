@@ -154,10 +154,10 @@ export default {
           password: 'key-b94d2f3e1f79498eff0abecd8c839135'
         },
         data: {
-          from='mailgun@mg.blo.om',
-          to='rob@brandetize.com',
-          subject='Website Lead',
-          text=emailContent
+          from:'mailgun@mg.blo.om',
+          to:'rob@brandetize.com',
+          subject:'Website Lead',
+          text:emailContent
         }
       })
 
