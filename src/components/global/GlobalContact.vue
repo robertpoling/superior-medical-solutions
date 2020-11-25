@@ -121,6 +121,14 @@ export default {
       }
     },
     submitForm() {
+
+      var emailContent = 'Name: ' + this.name + '\n'
+        + 'Phone: ' + this.phone  + '\n'
+        + 'Email: ' + this.email + '\n'
+        + 'Preferred Date : ' + this.dateSubmitted;
+
+/*    
+
       return axios({
         method: "post",
         url: "https://api.airtable.com/v0/" + process.env.GRIDSOME_AT_BASE,
@@ -137,6 +145,22 @@ export default {
           }
         }
       })
+*/      
+      return axios({
+        method: "post",
+        url: "https://api.mailgun.net/v3/mg.blo.om/messages",
+        auth: {
+          username: 'api',
+          password: 'key-b94d2f3e1f79498eff0abecd8c839135'
+        },
+        data: {
+          from='mailgun@mg.blo.om',
+          to='rob@brandetize.com',
+          subject='Website Lead',
+          text=emailContent
+        }
+      })
+
         .then(response => {
           console.log(response);
           if (this.$refs.form.validate()) {
