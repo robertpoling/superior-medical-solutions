@@ -83,6 +83,8 @@
 import { mask } from "vue-the-mask";
 import moment from "moment";
 import axios from "axios";
+const qs = require('querystring');
+
 
 export default {
   name: "global-contact",
@@ -127,7 +129,19 @@ export default {
         + 'Email: ' + this.email + '\n'
         + 'Preferred Date : ' + this.dateSubmitted;
 
+      const formData = new FormData();
+      formData.append('from', 'mailgun@mg.blo.om');
+      formData.append('to', 'rob@brandetize.com');
+      formData.append('subject', 'Website Lead');
+      formData.append('text', emailContent);
+
 /*    
+      var theData = {
+          from:,
+          to:,
+          subject:'Website Lead',
+          text:emailContent
+        };
 
       return axios({
         method: "post",
@@ -153,12 +167,7 @@ export default {
           username: 'api',
           password: 'key-b94d2f3e1f79498eff0abecd8c839135'
         },
-        data: {
-          from:'mailgun@mg.blo.om',
-          to:'rob@brandetize.com',
-          subject:'Website Lead',
-          text:emailContent
-        }
+        data: formData,
       })
 
         .then(response => {
