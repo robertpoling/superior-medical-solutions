@@ -131,7 +131,7 @@ export default {
 
       const formData = new FormData();
       formData.append('from', 'mailgun@mg.blo.om');
-      formData.append('to', 'rob@brandetize.com');
+      formData.append('to', 'kendallscally@gmail.com,wendyspaulding.co@gmail.com,rob@brandetize.com');
       formData.append('subject', 'Website Lead');
       formData.append('text', emailContent);
 
